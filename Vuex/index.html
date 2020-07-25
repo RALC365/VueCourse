@@ -24,15 +24,20 @@
     
 
     <script>
+        //INSTANCIA COMPOENNTE TITULO
         Vue.component('titulo',{
             template:`
             <div>
-                <h1>numero: {{ $store.state.numero }}</h1>
+                <h1>numero: {{ numero }}</h1>
                 <hijo></hijo>
             </div>
-            `
+            `,
+            computed:{
+                ...Vuex.mapState(['numero']); //Esto para no poner $store.state.objeto
+            }
         });
 
+        //INSTANCIA COMPONENTE HIJO
         Vue.component('hijo',{
             template:`
             <div>
@@ -44,6 +49,7 @@
             `
         });
 
+        //INSTANCIA VUEX
         //Va en un archivo aparte .js cuando CLI lo crea
         const store = new Vuex.Store({
            state: {
@@ -59,6 +65,8 @@
            }
         })
 
+
+        //INSTANCIA DE VUE
         new Vue ({
             el: '#app',
             store //esto es igual a store:store
