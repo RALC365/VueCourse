@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorial</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Aqui irá todo el contenido del vue-->
+        <h1>{{titulo}}</h1> <!--Interpolación: conectar Vue con el HTML-->
+
+        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta"><!--Vamos a conectar el HTML con Vue-->
+        <button @click="agregarFruta">Agregar</button>
+        
+        <ul>
+            <li v-for="fruta of frutas"> 
+                <input type="num" v-model.number="fruta.cantidad">
+                 - {{fruta.nombre}}
+                <span v-if="fruta.cantidad === 0">- Sin Stock</span>
+                <!--Todo lo que va entre los v- es código Javascript-->    
+                <button @click="fruta.cantidad++">+</button>            
+            </li>
+        </ul>
+        <!--Estos son los computed-->
+        <h4>TOTAL:  {{sumarFrutas}}</h4>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="01.js"></script>
+</body>
+</html>
