@@ -33,7 +33,7 @@
             </div>
             `,
             computed:{
-                ...Vuex.mapState(['numero']); //Esto para no poner $store.state.objeto
+                ...Vuex.mapState(['numero']) //Esto para no poner $store.state.objeto
             }
         });
 
@@ -43,10 +43,18 @@
             <div>
                 <!--Llamamos al store y luego al commit para poder hacer
                     la mutación (llamar a la función)-->
-                <button @click="$store.commit('aumentar')">+</button>
-                <h1>numero: {{ $store.state.numero }}</h1>
+                <button @click="aumentar">+</button>
+                <button @click="disminuir(2)">-</button>
+                <h1>numero: {{ numero }}</h1>
             </div>
-            `
+            `,
+            computed:{
+                ...Vuex.mapState(['numero']),
+            },
+            methods:{
+                //Solo colocamos los nombres de las funciones, no sus parametros
+                ...Vuex.mapMutations(['aumentar','disminuir'])
+            }
         });
 
         //INSTANCIA VUEX
@@ -61,6 +69,9 @@
                },
                aumentar2(state){
                    state.numero++
+               },
+               disminuir(state, n){
+                state.numero -= n;
                }
            }
         })
