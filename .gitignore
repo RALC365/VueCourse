@@ -23,3 +23,29 @@ VUE CLI/hello-world-vue-cli/.vscode
 *.njsproj
 *.sln
 *.sw?
+
+
+#CARPETA CLI-VUE-CLI-UI
+
+VUE CLI/hello-world-cli-ui-vue/.DS_Store
+VUE CLI/hello-world-cli-ui-vue/node_modules
+VUE CLI/hello-world-cli-ui-vue/dist
+
+# local env files
+VUE CLI/hello-world-cli-ui-vue/.env.local
+VUE CLI/hello-world-cli-ui-vue/.env.*.local
+
+# Log files
+VUE CLI/hello-world-cli-ui-vue/npm-debug.log*
+VUE CLI/hello-world-cli-ui-vue/yarn-debug.log*
+VUE CLI/hello-world-cli-ui-vue/yarn-error.log*
+VUE CLI/hello-world-cli-ui-vue/pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
