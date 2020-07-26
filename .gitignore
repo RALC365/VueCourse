@@ -49,3 +49,6 @@ VUE CLI/hello-world-cli-ui-vue/pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Carpeta vue-router
+VUE CLI/vue-router/node_modules
