@@ -4,9 +4,21 @@
 
     <form>
       <b-row>
-        <b-col md="6">
+        <b-col md="3">
           <b-form-input type="text" v-model="texto" :state="comprobar"></b-form-input>
           <small>Minimo 3 caracteres</small>
+        </b-col>
+        <b-col md="3">
+          <b-form-select v-model="select" :options="animales"></b-form-select>
+          <p>Animal seleccionado: {{select}}</p>
+        </b-col>
+        <b-col md="3">
+          <b-form-radio-group v-model="radio" :options="animalesRadio"></b-form-radio-group>
+          <p>Animal seleccionado: {{radio}}</p>
+        </b-col>
+        <b-col md="3">
+          <b-form-checkbox-group v-model="check" :options="animalesRadio"></b-form-checkbox-group>
+            <p>Animal seleccionado: {{check}}</p>
         </b-col>
       </b-row>
     </form>
@@ -20,13 +32,27 @@ export default {
   data() {
     return {
       texto: "",
+      select: null,
+      radio: null,
+      check: [],
+      animales: [
+        { value: null, text: "Seleccione un animal" },
+        { value: "Perro", text: "Gua gua" },
+        { value: "Gato", text: "Miau Miau" },
+        { value: "Pato", text: "Cuack" },
+      ],
+      animalesRadio: [
+        { value: "Perro", text: "Gua gua" },
+        { value: "Gato", text: "Miau Miau" },
+        { value: "Pato", text: "Cuack" },
+      ],
     };
   },
   computed: {
-      comprobar(){
-          return this.texto.length > 2 ? true : false
-      }
-  }
+    comprobar() {
+      return this.texto.length > 2 ? true : false;
+    },
+  },
 };
 </script>
 
